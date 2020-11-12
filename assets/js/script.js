@@ -79,7 +79,7 @@ $("#task-form-modal .btn-primary").click(function() {
 
     saveTasks();
     $(".list-group").on("click", "p", function() {
-      var text = $(this)
+      var text = $(this) 
       .text()
       .trim();
       var textInput = $("<textarea>")
@@ -98,13 +98,14 @@ $("#task-form-modal .btn-primary").click(function() {
       var status = $(this)
         .closest(".list-group")
         .attr("id")
-        replace("list-", "");
+        .replace("list-", "");
 
       // get the task's position in the list of other li elements
       var index = $(this)
         .closest(".list-group-item")
         .index();
-        tasks[status][index].text;
+
+        tasks[status][index].text = text;
         saveTasks();
 
         //recreate p element
