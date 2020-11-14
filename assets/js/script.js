@@ -168,6 +168,28 @@ $(".list-group").on("click", "span", function() {
   });
 });
 
+$(".card .list-group").sortable({
+  connectWith: $(".card .list-group"),
+  scroll: false,
+  tolerance: "pointer",
+  helper: "clone",
+  activate: function(event) {
+    console.log("active", this);
+  },
+  deactive: function(event) {
+    console.log("deactive", this);
+  },
+  over: function(event) {
+    console.log("over", event.target);
+  },
+  out: function(event) {
+    console.log("out", event.target);
+  },
+  update: function(event) {
+    console.log($(this).children());
+  }
+});
+
 // remove all tasks
 $("#remove-tasks").on("click", function() {
   for (var key in tasks) {
